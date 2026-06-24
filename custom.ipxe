@@ -1,12 +1,28 @@
 #!ipxe
-###
-### netboot.xyz-custom menu
-###
+##########################################
+# iPXE Boot Menu — nexuspea
+##########################################
+
+set crosscert https://192.168.1.1/ca.pem
+
+:error
+echo Error occurred, press any key to return to menu ...
+prompt
+goto main_menu
+
+colour --rgb 0xf9efe9 1 #highlighter
+colour --rgb 0xe79088 7 #text
+colour --rgb 0xc2d1b1 6 #menu text
+cpair --foreground 7 --background 1 6
 
 :start
-echo Hello world!
-sleep 10
-goto custom_exit
+imgfree
+console --picture http://nexuspea.github.io/netboot.xyz-custom/main.png
+menu Boot Menu - (${ip})
+item --gap         -- Main
+item kitkatdroid       Android x86 4.4.4
 
-:custom_exit
-exit 0
+:kitkatdroid
+imgfree
+menu ATTENTION
+item start       NEXUSPEA NETBOOT IS A WIP AND IS NOT FUNCTIONAL
