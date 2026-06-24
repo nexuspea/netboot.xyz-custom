@@ -1,0 +1,17 @@
+---
+layout: none
+---
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>Index of /netboot.xyz-custom</title>
+</head>
+<body>
+<h1>Index of /netboot.xyz-custom</h1>
+<ul>
+{% for file in site.static_files %}
+  <li><a href="{{ file.path | remove_first: '/' }}">{{ file.path | remove_first: '/'}}</a></li>
+{% endfor %}
+</ul>
+</body>
+</html>
